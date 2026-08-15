@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "this is a backend course for an online academy in the course of FS Web Dev",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "dev":"node server.js",
-    "server":"node server.js"
+    "dev": "node server.js",
+    "server": "node server.js"
   },
   "author": "nigga",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Moeen999/backend-CITOA/issues"
   },
-  "homepage": "https://github.com/Moeen999/backend-CITOA#readme"
+  "homepage": "https://github.com/Moeen999/backend-CITOA#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
