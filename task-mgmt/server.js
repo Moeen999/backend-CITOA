@@ -1,8 +1,11 @@
 // ! Now this is how we create the server in Express.js
 
 import express from 'express';
+import { connectDB } from './configs/db.js';
 
 const app = express();
+
+connectDB()
 
 // Respond to GET request on the root route
 app.get('/', (req, res) => {
