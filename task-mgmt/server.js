@@ -5,7 +5,11 @@ import { connectDB } from './configs/db.js';
 
 const app = express();
 
-connectDB()
+const db = await connectDB();
+await db.createCollection("tasks");
+
+console.log("Collection ready!");
+// createCollection()
 
 // Respond to GET request on the root route
 app.get('/', (req, res) => {
