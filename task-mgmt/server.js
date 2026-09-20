@@ -5,6 +5,12 @@ import { connectDB } from './configs/db.js';
 
 const app = express();
 
+app.use(cors({
+  origin: 'http://localhost:5173', 
+  methods:["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders:["Content-Type", "Authorization"],
+}))
+
 const db = await connectDB();
 await db.createCollection("tasks");
 
@@ -17,14 +23,27 @@ app.get('/', (req, res) => {
 });
 
 // Respond to POST request on the root route
-app.post('/', (req, res) => {
-  res.send('POST request to the homepage');
-});
+// app.post('/', (req, res) => {
+//   res.send('POST request to the homepage');
+// });
 
 // Respond to GET request on the /about route
 app.get('/about', (req, res) => {
   res.send('About page');
 });
+
+app.get('/contact', (req, res) => {
+  res.send('contact page');
+});
+
+
+// app.all('*', (req, res) => {
+//   res.status(404).send('404 Not Found');
+// }); 
+
+// app.all('*', (req, res) => {
+//   res.status(404).send('404 - Page not found');
+// });
 
 
 
