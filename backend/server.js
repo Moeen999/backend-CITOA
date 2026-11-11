@@ -1,9 +1,11 @@
 import express from "express"
 import dotenv from "dotenv"
 import connectDB from "./configs/db.js"
+import userRouter from "./src/routes/user.routes.js"
 dotenv.config()
 
 const app = express()
+app.use("/users", userRouter)  //todo localhost:3000/users
 
 connectDB()
 
