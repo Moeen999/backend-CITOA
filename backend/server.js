@@ -5,7 +5,8 @@ import userRouter from "./src/routes/user.routes.js"
 dotenv.config()
 
 const app = express()
-app.use("/users", userRouter)  //todo localhost:3000/users
+app.use(express.json())
+app.use("/api/users", userRouter)  //todo localhost:3000/api/users
 
 connectDB()
 
